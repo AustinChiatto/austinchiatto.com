@@ -32,7 +32,7 @@ export interface PortfolioData {
   projects: Projects[];
 }
 
-const portfolioData: PortfolioData = {
+export const portfolioData: PortfolioData = {
   intro: {
     heading: 'Austin Chiatto',
     subheading: 'Vancouver, Canada',
@@ -128,5 +128,3 @@ const portfolioData: PortfolioData = {
     }
   ]
 };
-
-export default portfolioData;
