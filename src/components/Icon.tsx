@@ -9,20 +9,44 @@ export type Icons = {
 const icons = {
   palette: (
     <svg
-      width="15"
-      height="15"
-      viewBox="0 0 15 15"
+      width="14"
+      height="14"
+      viewBox="0 0 14 14"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <path
-        d="M0.5 7.5C0.5 11.366 3.63401 14.5 7.5 14.5V0.5C3.63401 0.5 0.5 3.63401 0.5 7.5Z"
-        fill="currentColor"
-      />
-      <path
-        d="M7.5 14.5C3.63401 14.5 0.5 11.366 0.5 7.5C0.5 3.63401 3.63401 0.5 7.5 0.5M7.5 14.5C11.366 14.5 14.5 11.366 14.5 7.5C14.5 3.63401 11.366 0.5 7.5 0.5M7.5 14.5V0.5"
+      <g clip-path="url(#clip0_1255_1380)">
+        <rect
+          x="14"
+          y="14"
+          width="7"
+          height="14"
+          transform="rotate(-180 14 14)"
+          fill="currentColor"
+        />
+      </g>
+      <rect
+        x="13.5"
+        y="13.5"
+        width="13"
+        height="13"
+        rx="6.5"
+        transform="rotate(-180 13.5 13.5)"
         stroke="currentColor"
       />
+      <defs>
+        <clipPath id="clip0_1255_1380">
+          <rect
+            x="14"
+            y="14"
+            width="14"
+            height="14"
+            rx="7"
+            transform="rotate(-180 14 14)"
+            fill="transparent"
+          />
+        </clipPath>
+      </defs>
     </svg>
   ),
   github: (
