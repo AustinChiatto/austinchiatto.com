@@ -1,10 +1,11 @@
+export type ContactIcons = 'github' | 'linkedin' | 'envelope' | 'document';
+
 export interface Contacts {
   id: number;
   label: string;
   url: string;
-  icon: string;
-  caption: string;
-  address: string;
+  icon: ContactIcons;
+  caption: string[];
 }
 
 export interface Projects {
@@ -45,32 +46,28 @@ export const portfolioData: PortfolioData = {
       label: 'Email',
       url: 'mailto:hey@austinchiatto.com',
       icon: 'envelope',
-      caption: 'Shoot me an email',
-      address: 'hey@austinchiatto.com'
+      caption: ['Shoot me an email', 'hey@austinchiatto.com']
     },
     {
       id: 2,
-      label: 'LinkedIn',
-      url: 'www.linkedin.com/in/austin-chiatto',
-      icon: 'linkedIn',
-      caption: 'Visit LinkedIn profile',
-      address: 'linkedin.com/austin-chiatto'
+      label: 'Resume',
+      url: '#',
+      icon: 'document',
+      caption: ['Download my resume', 'AustinChiatto_Resume.pdf']
     },
     {
       id: 3,
       label: 'GitHub',
       url: 'https://github.com/AustinChiatto',
       icon: 'github',
-      caption: 'Visit GitHub profile',
-      address: 'github.com/AustinChiatto'
+      caption: ['Browse my GitHub', 'github.com/AustinChiatto']
     },
     {
       id: 4,
-      label: 'Resume',
-      url: '#',
-      icon: 'document',
-      caption: 'Download my resume',
-      address: 'AustinChiatto_Resume.pdf'
+      label: 'LinkedIn',
+      url: 'www.linkedin.com/in/austin-chiatto',
+      icon: 'linkedin',
+      caption: ['View my LinkedIn profile', 'linkedin.com/austin-chiatto']
     }
   ],
   projects: [

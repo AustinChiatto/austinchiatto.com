@@ -1,5 +1,5 @@
-'use client';
 import { Contacts } from '@/data/content';
+import ContactModal from './ContactModal';
 
 type Props = {
   contacts: Contacts[];
@@ -8,7 +8,7 @@ type Props = {
 const ToolBar = ({ contacts }: Props) => {
   return (
     <div className="w-full flex gap-2">
-      <button className="flex-1 h-16 px-[1.125rem] py-2.5 text-left border border-border rounded-lg bg-background">Get in touch</button>
+      <ContactModal contacts={contacts} />
       <button className="h-full aspect-square border border-border rounded-lg bg-background">+</button>
     </div>
   );
