@@ -1,4 +1,5 @@
 import { PortfolioData } from '@/data/content';
+import ToolBar from './ToolBar/ToolBar';
 
 type Props = {
   content: PortfolioData;
@@ -17,7 +18,7 @@ const SideBar = ({ content }: Props) => {
         <p>{intro.bio}</p>
         <p>{intro.employment}</p>
       </div>
-      <div>toolbar</div>
+      <ToolBar contacts={content.contacts} />
     </aside>
   );
 };
