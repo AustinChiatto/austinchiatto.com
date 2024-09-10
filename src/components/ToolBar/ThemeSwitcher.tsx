@@ -1,9 +1,13 @@
 'use client';
 import { useState } from 'react';
 import Icon from '../Icon';
+import { useTheme } from '@/context/ThemeContext';
+
+const themes = ['light', 'terracotta', 'plum', 'grape', 'mint', 'ocean', 'dark'] as const;
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { theme, setTheme } = useTheme();
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState);
@@ -17,10 +21,21 @@ const ThemeSwitcher = () => {
       }`}
     >
       <ul className="w-full flex flex-col gap-3 justify-center">
-        {/* todo: create map when themes have been added */}
-        <li className="aspect-square grid place-items-center p-2 rounded-sm">
-          <Icon name="palette" />
-        </li>
+        {themes.map((t) => (
+          <li
+            key={t}
+            onMouseDown={() => setTheme(t)}
+            className={`group aspect-square grid place-items-center p-2 bg-background rounded-md ${
+              theme === t ? 'ring-1 ring-foreground' : 'border border-border'
+            }`}
+            data-theme={t}
+          >
+            <Icon
+              name="palette"
+              className="text-secondary-foreground transition-colors group-hover:text-foreground"
+            />
+          </li>
+        ))}
       </ul>
     </div>
   );
