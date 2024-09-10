@@ -11,7 +11,7 @@ const ContactModal = ({ contacts }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const [caption, setCaption] = useState(['Nice to meet you', '👋']);
 
-  const handleModalToggle = () => {
+  const handleToggle = () => {
     setIsOpen((prevState) => !prevState);
   };
 
@@ -21,7 +21,7 @@ const ContactModal = ({ contacts }: Props) => {
 
   const modal = (
     <div
-      onMouseLeave={handleModalToggle}
+      onMouseLeave={handleToggle}
       className={`absolute left-[-1px] right-[-1px] bottom-[-1px] p-2.5 flex flex-col gap-3 justify-between items-center border border-border rounded-lg bg-background transition-all ${
         isOpen ? 'opacity-1' : 'translate-y-1 opacity-0 pointer-events-none'
       }`}
@@ -54,7 +54,7 @@ const ContactModal = ({ contacts }: Props) => {
   return (
     <>
       <button
-        onMouseDown={handleModalToggle}
+        onMouseDown={handleToggle}
         className="relative flex-1 h-16 px-[1.125rem] py-2.5 flex justify-between items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md"
       >
         {modal}
