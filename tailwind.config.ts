@@ -10,7 +10,8 @@ const config: Config = {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         'secondary-background': 'hsl(var(--secondary-background))',
-        'secondary-foreground': 'hsl(var(--secondary-foreground))'
+        'secondary-foreground': 'hsl(var(--secondary-foreground))',
+        border: 'hsl(var(--border))'
       },
       fontSize: {
         xs: '12px',
