@@ -1,11 +1,12 @@
+import ProjectGrid from '@/components/ProjectGrid';
 import SideBar from '@/components/SideBar';
 import { portfolioData } from '@/data/content';
 
 export default function Home() {
   return (
-    <main className="grid grid-cols-12">
+    <main className="grid grid-cols-12 overflow-hidden">
       <SideBar content={portfolioData} />
-      <section className="col-span-12 lg:col-span-8 xl:col-span-9 p-4 md:p-6 pl-0 md:pl-0 lg:h-screen lg:max-h-screen lg:overflow-y-scoll"></section>
+      <ProjectGrid projects={portfolioData.projects} />
     </main>
   );
 }
