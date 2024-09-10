@@ -9,6 +9,18 @@
     --secondary-background: 0 0% 97%;
     --secondary-foreground: 210 3% 41%;
     --border: 210 8% 91%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-sm font-normal leading-normal m-0;
   }
 }
 
