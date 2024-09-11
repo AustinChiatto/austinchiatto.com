@@ -1,4 +1,4 @@
-import ProjectGrid from '@/components/ProjectGrid';
+import ProjectGrid from '@/components/ProjectGrid/ProjectGrid';
 import SideBar from '@/components/SideBar';
 import { portfolioData } from '@/data/content';
 
