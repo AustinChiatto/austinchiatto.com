@@ -15,7 +15,7 @@ const icons = {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g clip-path="url(#clip0_1255_1380)">
+      <g clipPath="url(#clip0_1255_1380)">
         <rect
           x="14"
           y="14"
@@ -72,8 +72,8 @@ const icons = {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M0 1.5C0 0.671573 0.671573 0 1.5 0H13.5C14.3284 0 15 0.671573 15 1.5V13.5C15 14.3284 14.3284 15 13.5 15H1.5C0.671573 15 0 14.3284 0 13.5V1.5ZM5 5H4V4H5V5ZM4 11V6H5V11H4ZM8.5 7C7.67157 7 7 7.67157 7 8.5V11H6V6H7V6.49982C7.41783 6.18597 7.9372 6 8.5 6C9.88071 6 11 7.11929 11 8.5V11H10V8.5C10 7.67157 9.32843 7 8.5 7Z"
         fill="currentColor"
       />
@@ -106,8 +106,8 @@ const icons = {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M1 1.5C1 0.671573 1.67157 0 2.5 0H10.7071L14 3.29289V13.5C14 14.3284 13.3284 15 12.5 15H2.5C1.67157 15 1 14.3284 1 13.5V1.5ZM4.00041 3.99707L9.00041 4.00035L8.99976 5.00035L3.99976 4.99707L4.00041 3.99707ZM11 6.99542H4V7.99542H11V6.99542ZM11.0006 10.0005L4.0006 9.99292L3.99951 10.9929L10.9995 11.0005L11.0006 10.0005Z"
         fill="currentColor"
       />
@@ -122,8 +122,8 @@ const icons = {
       fill="none"
     >
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M7 7V1H8V7H14V8H8V14H7V8H1V7H7Z"
         fill="currentColor"
       ></path>
