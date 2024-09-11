@@ -1,4 +1,4 @@
-import { robotoMono } from '@/fonts';
+import { robotoMono } from '@/data/fonts';
 
 const Badge = ({ label, alt }: { label: string; alt?: boolean }) => {
   return (

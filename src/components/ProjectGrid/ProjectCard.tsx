@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { robotoMono } from '@/fonts';
+import { robotoMono } from '@/data/fonts';
 import Badge from '../Badge';
 
 type Props = {
@@ -9,12 +9,16 @@ type Props = {
   stack: string[];
   name: string;
   repo: string;
+  commit: {
+    repo: string;
+    sha: string;
+    date: string;
+  };
 };
 
 // todo: add useEffect for hover, instant trigger is too jarring
-// todo: implement github api integration
 
-export const ProjectCard = ({ desc, url, stack, name, repo }: Props) => {
+export const ProjectCard = ({ desc, url, stack, name, repo, commit }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const projectMedia = (
@@ -39,7 +43,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo }: Props) => {
         className={`text-xs  text-center`}
         style={{ fontFamily: robotoMono.style.fontFamily }}
       >
-        <span className="text-foreground">4c76284</span> · 4 months ago
+        <span className="text-foreground">{commit.sha}</span> · {commit.date}
       </p>
       <Badge
         label="repo"
