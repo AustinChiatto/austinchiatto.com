@@ -1,4 +1,5 @@
 import { Projects } from '@/data/content';
+import Badge from './Badge';
 
 type Props = {
   projects: Projects[];
@@ -21,8 +22,10 @@ const ProjectGrid = ({ projects }: Props) => {
             </div>
             <div className="w-full">
               <ul className="flex gap-2 justify-end">
-                {project.stack.map((item, i) => (
-                  <li key={i}>{item}</li>
+                {project.stack.map((tech, i) => (
+                  <li key={i}>
+                    <Badge label={tech} />
+                  </li>
                 ))}
               </ul>
             </div>

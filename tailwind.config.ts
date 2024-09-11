@@ -28,6 +28,9 @@ const config: Config = {
         sm: '0.5rem',
         md: '0.625rem',
         lg: '1.125rem'
+      },
+      fontFamily: {
+        secondary: 'var(--font-mono)'
       }
     }
   },
