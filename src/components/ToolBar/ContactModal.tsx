@@ -9,7 +9,8 @@ type Props = {
 
 const ContactModal = ({ contacts }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [caption, setCaption] = useState(['Nice to meet you', '👋']);
+  const defaultCaption = ['Hey! 👋', "It's nice to meet you"];
+  const [caption, setCaption] = useState(defaultCaption);
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState);
@@ -36,6 +37,7 @@ const ContactModal = ({ contacts }: Props) => {
             key={id}
             className="w-full"
             onMouseOver={() => handleContactHover(contact.caption)}
+            onMouseOut={() => handleContactHover(defaultCaption)}
           >
             <a
               href={contact.url}
