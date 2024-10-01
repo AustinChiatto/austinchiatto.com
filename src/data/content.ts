@@ -76,7 +76,7 @@ export const portfolioData: PortfolioData = {
       name: 'Apogee',
       desc: 'Live launch tracking.',
       image: {
-        src: '',
+        src: '/images/apogee-thumb.png',
         base64: '',
         alt: ''
       },
@@ -89,7 +89,7 @@ export const portfolioData: PortfolioData = {
       name: 'Markdown for Apple Notes',
       desc: null,
       image: {
-        src: '',
+        src: '/images/mdNotes-icon.svg',
         base64: '',
         alt: ''
       },
@@ -102,7 +102,7 @@ export const portfolioData: PortfolioData = {
       name: 'Hex Code Opacity Control',
       desc: null,
       image: {
-        src: '',
+        src: '/images/code2image-thumb.png',
         base64: '',
         alt: ''
       },
@@ -112,16 +112,42 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 3,
+      name: 'Apogee',
+      desc: 'Live launch tracking.',
+      image: {
+        src: '/images/apogee-thumb.png',
+        base64: '',
+        alt: ''
+      },
+      stack: ['Next.js', 'TypeScript', 'API'],
+      url: 'https://apogee-spaceflight-tracker.vercel.app',
+      repo: 'https://github.com/AustinChiatto/apogee'
+    },
+    {
+      id: 4,
       name: 'Asteroid Run',
       desc: null,
       image: {
-        src: '',
+        src: '/images/asteroid-run-thumb.png',
         base64: '',
         alt: ''
       },
       stack: ['HTML Canvas', 'JavaScript'],
       url: 'https://asteroidrun.crumb.so/',
       repo: 'https://github.com/AustinChiatto/asteroid-run-2.0.0'
+    },
+    {
+      id: 5,
+      name: 'OnionOS Themes',
+      desc: null,
+      image: {
+        src: '/images/scallion-theme-thumb.png',
+        base64: '',
+        alt: ''
+      },
+      stack: ['Figma', 'JSON'],
+      url: 'https://asteroidrun.crumb.so/',
+      repo: 'https://github.com/AustinChiatto/Themes'
     }
   ]
 };

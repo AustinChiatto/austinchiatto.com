@@ -16,7 +16,7 @@ const ThemeSwitcher = () => {
   const palette = (
     <div
       onMouseLeave={handleToggle}
-      className={`absolute left-[-1px] right-[-1px] bottom-[-1px] p-2.5 border border-border rounded-lg bg-background transition-all ${
+      className={`absolute left-[-1px] right-[-1px] bottom-[-1px] p-2.5 border border-border rounded-lg bg-background transition-all duration-300 ${
         isOpen ? 'opacity-1' : 'translate-y-1 opacity-0 pointer-events-none'
       }`}
     >

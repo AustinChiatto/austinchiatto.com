@@ -19,6 +19,7 @@ const ProjectGrid = async ({ projects }: Props) => {
             stack={project.stack}
             url={project.url}
             repo={project.repo}
+            image={project.image}
             commit={recentCommits[project.id]}
           />
         ))}

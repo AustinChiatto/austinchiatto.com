@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { robotoMono } from '@/data/fonts';
 import Badge from '../Badge';
+import Image from 'next/image';
 
 type Props = {
   desc: string | null;
@@ -14,33 +15,48 @@ type Props = {
     sha: string;
     date: string;
   };
+  image: {
+    src: string;
+    base64: string;
+    alt: string;
+  };
 };
 
-// todo: add useEffect for hover, instant trigger is too jarring
-
-export const ProjectCard = ({ desc, url, stack, name, repo, commit }: Props) => {
+export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const projectMedia = (
-    <figure className="block absolute overflow-hidden rounded-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-      <a
-        href={url}
-        target="_blank"
-      >
-        project image
-      </a>
-    </figure>
+    <a
+      href={url}
+      className={`block relative rounded-sm overflow-hidden transition-all ease-fling duration-[200ms] drop-shadow-md hover:drop-shadow-lg hover:-translate-y-1 ${
+        desc ? 'hover:scale-[1.01] max-w-[70%] max-h-[60%]' : 'hover:scale-[1.01] max-w-[60%] max-h-[50%]'
+      } `}
+    >
+      <Image
+        src={image.src}
+        alt={image.alt}
+        width={500}
+        height={300}
+        style={{
+          maxWidth: '100%',
+          maxHeight: '100%',
+          width: 'auto',
+          height: 'auto',
+          objectFit: 'contain'
+        }}
+      />
+    </a>
   );
 
   const repoStatus = (
     <a
       href={repo}
-      className={`block min-w-fit h-fit absolute right-0 top-0 flex flex-nowrap z-1 whitespace-nowrap pl-2 gap-2 items-center justify-end bg-background rounded-sm transition-all ${
+      className={`block min-w-fit h-fit absolute right-0 top-0 flex flex-nowrap z-1 whitespace-nowrap pl-2 gap-2 items-center justify-end bg-background rounded-sm transition-all duration-300 ${
         isOpen ? 'opacity-1' : 'translate-x-1 opacity-0 blur-xs pointer-events-none'
       }`}
     >
       <p
-        className={`text-xs  text-center`}
+        className={`text-xs text-center px-2`}
         style={{ fontFamily: robotoMono.style.fontFamily }}
       >
         <span className="text-foreground">{commit.sha}</span> · {commit.date}
@@ -59,7 +75,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit }: Props) => 
       className="relative block w-fit"
     >
       {repoStatus}
-      <ul className={`h-fit flex gap-2 justify-end transition-all ${isOpen ? 'opacity-0 blur-xs pointer-events-none' : ''}`}>
+      <ul className={`h-fit flex gap-2 justify-end transition-all duration-300 ${isOpen ? 'opacity-0 blur-xs pointer-events-none' : ''}`}>
         {stack.map((tech, i) => (
           <li key={i}>
             <Badge label={tech} />
@@ -79,7 +95,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit }: Props) => 
         <h3 className="text-foreground">{name}</h3>
         {desc && <p>{desc}</p>}
       </div>
-      {projectMedia}
+      <div className="absolute inset-0 grid place-items-center">{projectMedia}</div>
       <div className="w-full flex justify-end">{projectStack}</div>
     </li>
   );
