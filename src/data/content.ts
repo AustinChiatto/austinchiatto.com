@@ -27,7 +27,13 @@ export interface PortfolioData {
     heading: string;
     subheading: string;
     bio: string;
-    employment: string;
+    employment: {
+      text: string;
+      link?: {
+        url: string;
+        label: string;
+      };
+    }[];
   };
   contacts: Contacts[];
   projects: Projects[];
@@ -38,7 +44,13 @@ export const portfolioData: PortfolioData = {
     heading: 'Austin Chiatto',
     subheading: 'Vancouver, Canada',
     bio: 'I build full-stack tools to solve niche problems, daydream of finding the perfect notes app, and try every day to give more than I take.',
-    employment: 'Currently, I work as a front-end developer building websites at Forge and Smith. Previously at Dovetail Digital.'
+    employment: [
+      { text: 'Currently, I work as a front-end developer building websites at ' },
+      { text: 'Forge and Smith', link: { url: 'https://forgeandsmith.com', label: 'Forge and Smith' } },
+      { text: '. Previously at ' },
+      { text: 'Dovetail Digital', link: { url: 'https://www.dovetaildigital.ca', label: 'Dovetail Digital' } },
+      { text: '.' }
+    ]
   },
   contacts: [
     {
