@@ -29,7 +29,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
     <a
       href={url}
       className={`block relative rounded-sm overflow-hidden transition-all ease-fling duration-[200ms] drop-shadow-md hover:drop-shadow-lg hover:-translate-y-1 ${
-        desc ? 'hover:scale-[1.01] max-w-[70%] max-h-[60%]' : 'hover:scale-[1.01] max-w-[60%] max-h-[50%]'
+        desc ? 'max-w-[100%] max-h-[80%]' : 'max-w-[60%] max-h-[50%]'
       } `}
     >
       <Image
@@ -87,7 +87,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
 
   return (
     <li
-      className={`relative rounded-lg p-6 flex flex-col justify-between ${
+      className={`relative overflow-hidden rounded-lg p-6 flex flex-col justify-between ${
         desc !== null ? 'col-span-12 aspect-[1.5/1]' : 'col-span-6 aspect-square'
       } bg-secondary-background`}
     >

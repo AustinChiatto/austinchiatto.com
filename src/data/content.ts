@@ -114,7 +114,7 @@ export const portfolioData: PortfolioData = {
       name: 'Hex Code Opacity Control',
       desc: null,
       image: {
-        src: '/images/code2image-thumb.png',
+        src: '/images/hex-opacity-thumb.png',
         base64: '',
         alt: ''
       },
@@ -124,8 +124,8 @@ export const portfolioData: PortfolioData = {
     },
     {
       id: 3,
-      name: 'Apogee',
-      desc: 'Live launch tracking.',
+      name: 'Another Project',
+      desc: 'No Clue.',
       image: {
         src: '/images/apogee-thumb.png',
         base64: '',
