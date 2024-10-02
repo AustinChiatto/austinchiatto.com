@@ -90,3 +90,14 @@ body {
     text-wrap: balance;
   }
 }
+
+::selection {
+  background-color: hsl(var(--foreground));
+  color: hsl(var(--background));
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: hsl(var(--foreground));
+  color: hsl(var(--background));
+}
