@@ -101,7 +101,7 @@ export const portfolioData: PortfolioData = {
       name: 'Markdown for Apple Notes',
       desc: null,
       image: {
-        src: '/images/mdNotes-icon.svg',
+        src: '/images/mdNotes-icon.png',
         base64: '',
         alt: ''
       },
@@ -122,21 +122,22 @@ export const portfolioData: PortfolioData = {
       url: 'https://hex-opacity.austinchiatto.com',
       repo: 'https://github.com/AustinChiatto/hex-code-opacity'
     },
+    // {
+    //   id: 3,
+    //   name: 'Another Project',
+    //   desc: 'No Clue.',
+    //   image: {
+    //     src: '/images/apogee-thumb.png',
+    //     base64: '',
+    //     alt: ''
+    //   },
+    //   stack: ['Next.js', 'TypeScript', 'API'],
+    //   url: 'https://apogee-spaceflight-tracker.vercel.app',
+    //   repo: 'https://github.com/AustinChiatto/apogee'
+    // },
     {
       id: 3,
-      name: 'Another Project',
-      desc: 'No Clue.',
-      image: {
-        src: '/images/apogee-thumb.png',
-        base64: '',
-        alt: ''
-      },
-      stack: ['Next.js', 'TypeScript', 'API'],
-      url: 'https://apogee-spaceflight-tracker.vercel.app',
-      repo: 'https://github.com/AustinChiatto/apogee'
-    },
-    {
-      id: 4,
+      // id: 4,
       name: 'Asteroid Run',
       desc: null,
       image: {
@@ -149,7 +150,8 @@ export const portfolioData: PortfolioData = {
       repo: 'https://github.com/AustinChiatto/asteroid-run-2.0.0'
     },
     {
-      id: 5,
+      id: 4,
+      // id: 5,
       name: 'OnionOS Themes',
       desc: null,
       image: {

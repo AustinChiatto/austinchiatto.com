@@ -43,7 +43,7 @@ const ThemeSwitcher = () => {
   return (
     <button
       onMouseDown={handleToggle}
-      className="relative h-full aspect-square grid place-items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md hover:text-foreground"
+      className="relative min-h-16 h-full aspect-square grid place-items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md hover:text-foreground"
     >
       {palette}
       <Icon name="palette" />

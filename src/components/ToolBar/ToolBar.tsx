@@ -8,7 +8,7 @@ type Props = {
 
 const ToolBar = ({ contacts }: Props) => {
   return (
-    <div className="w-full flex gap-2">
+    <div className="w-full flex md:justify-center gap-2 fixed lg:relative bottom-0 left-0 right-0 lg:relative lg:bottom-[unset] left-[unset] z-50 p-4 px-6 lg:p-0 ">
       <ContactModal contacts={contacts} />
       <ThemeSwitcher />
     </div>

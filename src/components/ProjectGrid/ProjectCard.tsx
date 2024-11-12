@@ -28,8 +28,8 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
   const projectMedia = (
     <a
       href={url}
-      className={`block relative rounded-sm overflow-hidden transition-all ease-fling duration-[200ms] drop-shadow-md hover:drop-shadow-lg hover:-translate-y-1 ${
-        desc ? 'max-w-[100%] max-h-[80%]' : 'max-w-[60%] max-h-[50%]'
+      className={`block relative rounded-xs md:rounded-sm overflow-hidden transition-all ease-fling duration-[200ms] drop-shadow-md hover:drop-shadow-lg hover:-translate-y-1 max-w-[70%] max-h-[50%] ${
+        desc ? 'md:max-w-[60%] md:max-h-[70%] lg:max-w-[100%] lg:max-h-[80%]' : ''
       } `}
     >
       <Image
@@ -88,7 +88,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
   return (
     <li
       className={`relative overflow-hidden rounded-lg p-6 flex flex-col justify-between ${
-        desc !== null ? 'col-span-12 aspect-[1.5/1]' : 'col-span-6 aspect-square'
+        desc !== null ? 'col-span-12 aspect-square md:aspect-[1.5/1]' : 'col-span-12 md:col-span-6 aspect-square'
       } bg-secondary-background`}
     >
       <div>
