@@ -43,7 +43,7 @@ export const portfolioData: PortfolioData = {
   intro: {
     heading: 'Austin Chiatto',
     subheading: 'Vancouver, Canada',
-    bio: 'I build full-stack tools to solve niche problems, daydream of finding the perfect notes app, and try every day to give more than I take.',
+    bio: 'I build full-stack tools to solve problems, daydream of finding the perfect notes app, and try every day to give more than I take.',
     employment: [
       { text: 'Currently, I work as a front-end developer building websites at ' },
       { text: 'Forge and Smith', link: { url: 'https://forgeandsmith.com', label: 'Forge and Smith' } },
@@ -77,7 +77,7 @@ export const portfolioData: PortfolioData = {
     {
       id: 3,
       label: 'LinkedIn',
-      url: 'www.linkedin.com/in/austin-chiatto',
+      url: 'https://www.linkedin.com/in/austin-chiatto/',
       icon: 'linkedin',
       caption: ['View my LinkedIn profile', 'linkedin.com/austin-chiatto']
     }
