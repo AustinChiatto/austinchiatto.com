@@ -1,19 +1,20 @@
 import { PortfolioData } from '@/data/content';
 import ToolBar from './ToolBar/ToolBar';
+import Link from 'next/link';
 
 type Props = {
   content: PortfolioData;
 };
 
 const EmploymentLink = ({ url, label }: { url: string; label: string }) => (
-  <a
+  <Link
     href={url}
     target="_blank"
     rel="noopener noreferrer"
     className="text-foreground decoration-secondary-foreground underline-offset-2 hover:underline"
   >
     {label}
-  </a>
+  </Link>
 );
 
 const SideBar = ({ content }: Props) => {

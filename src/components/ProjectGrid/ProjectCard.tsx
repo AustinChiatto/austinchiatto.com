@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { robotoMono } from '@/data/fonts';
 import Badge from '../Badge';
 import Image from 'next/image';
+import Link from 'next/link';
 
 type Props = {
   desc: string | null;
@@ -26,7 +27,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
   const [isOpen, setIsOpen] = useState(false);
 
   const projectMedia = (
-    <a
+    <Link
       href={url}
       className={`block relative rounded-xs md:rounded-sm overflow-hidden transition-all ease-fling duration-[200ms] drop-shadow-md hover:drop-shadow-lg hover:-translate-y-1 max-w-[70%] max-h-[50%] ${
         desc ? 'md:max-w-[60%] md:max-h-[70%] lg:max-w-[60%] lg:max-h-[70%] xl:max-w-[100%] xl:max-h-[80%]' : ''
@@ -45,11 +46,11 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
           objectFit: 'contain'
         }}
       />
-    </a>
+    </Link>
   );
 
   const repoStatus = (
-    <a
+    <Link
       href={repo}
       className={`block min-w-fit h-fit absolute right-0 top-0 flex flex-nowrap z-1 whitespace-nowrap pl-2 gap-2 items-center justify-end bg-background rounded-sm transition-all duration-300 ${
         isOpen ? 'opacity-1' : 'translate-x-1 opacity-0 blur-xs pointer-events-none'
@@ -65,7 +66,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
         label="repo"
         alt
       />
-    </a>
+    </Link>
   );
 
   const projectStack = (
@@ -87,16 +88,16 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
 
   return (
     <li
-      className={`relative overflow-hidden rounded-lg p-6 flex flex-col justify-between ${
-        desc !== null ? 'col-span-12 aspect-square md:aspect-[1.5/1]' : 'col-span-12 md:col-span-6 aspect-square'
+      className={`relative overflow-hidden rounded-lg p-4 lg:p-6 lg:pt-4 flex flex-col justify-between ${
+        desc ? 'col-span-12 aspect-square md:aspect-[1.5/1]' : 'col-span-12 md:col-span-6 aspect-square'
       } bg-secondary-background`}
     >
-      <div>
+      <div className="z-10">
         <h3 className="text-foreground">{name}</h3>
         {desc && <p>{desc}</p>}
       </div>
       <div className="absolute inset-0 grid place-items-center">{projectMedia}</div>
-      <div className="w-full flex justify-end">{projectStack}</div>
+      <div className="w-full flex justify-end z-10">{projectStack}</div>
     </li>
   );
 };

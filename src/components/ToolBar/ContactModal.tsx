@@ -2,6 +2,7 @@
 import { Contacts } from '@/data/content';
 import { useState } from 'react';
 import Icon from '../Icon';
+import Link from 'next/link';
 
 type Props = {
   contacts: Contacts[];
@@ -39,14 +40,14 @@ const ContactModal = ({ contacts }: Props) => {
             onMouseOver={() => handleContactHover(contact.caption)}
             onMouseOut={() => handleContactHover(defaultCaption)}
           >
-            <a
+            <Link
               href={contact.url}
               target="_blank"
               className="block flex justify-between items-center text-left p-2.5 rounded-md hover:bg-secondary-background hover:text-foreground"
             >
               {contact.label}
               <Icon name={contact.icon} />
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
