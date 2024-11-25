@@ -25,7 +25,8 @@ const ThemeSwitcher = () => {
           <li
             key={t}
             onMouseDown={() => setTheme(t)}
-            className={`group aspect-square grid place-items-center p-2 bg-background rounded-md ${
+            onTouchStart={handleToggle}
+            className={`group w-full aspect-square grid place-items-center cursor-pointer p-2 bg-background rounded-md ${
               theme === t ? 'ring-1 ring-foreground' : 'border border-border'
             }`}
             data-theme={t}
@@ -41,13 +42,15 @@ const ThemeSwitcher = () => {
   );
 
   return (
-    <button
-      onMouseDown={handleToggle}
-      className="relative min-h-16 h-full aspect-square grid place-items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md hover:text-foreground"
-    >
+    <div className="relative min-h-16 h-full">
+      <button
+        onMouseDown={handleToggle}
+        className="min-h-16 h-full aspect-square grid place-items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md hover:text-foreground"
+      >
+        <Icon name="palette" />
+      </button>
       {palette}
-      <Icon name="palette" />
-    </button>
+    </div>
   );
 };
 
