@@ -12,7 +12,6 @@ const fontSans = FontSans({
 export const metadata: Metadata = {
   title: 'Austin Chiatto | Full Stack Developer',
   description: 'I build full-stack tools to solve problems, daydream of finding the perfect notes app, and try every day to give more than I take.',
-  keywords: ['Full Stack Developer', 'React', 'Next.js', 'TypeScript', 'Vancouver', 'Portfolio'],
   authors: [{ name: 'Austin Chiatto' }],
   openGraph: {
     title: 'Austin Chiatto | Full Stack Developer',
