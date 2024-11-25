@@ -1,8 +1,9 @@
 'use client';
 import { Contacts } from '@/data/content';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Icon from '../Icon';
 import Link from 'next/link';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 type Props = {
   contacts: Contacts[];
@@ -12,6 +13,11 @@ const ContactModal = ({ contacts }: Props) => {
   const [isOpen, setIsOpen] = useState(false);
   const defaultCaption = ['Hey! 👋', "It's nice to meet you"];
   const [caption, setCaption] = useState(defaultCaption);
+  const modalRef = useRef(null);
+
+  useClickOutside(modalRef, () => {
+    if (isOpen) setIsOpen(false);
+  });
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState);
@@ -23,6 +29,7 @@ const ContactModal = ({ contacts }: Props) => {
 
   const modal = (
     <div
+      ref={modalRef}
       onMouseLeave={handleToggle}
       className={`absolute left-[-1px] right-[-1px] bottom-[-1px] p-2.5 flex flex-col gap-3 justify-between items-center border border-border rounded-lg bg-background transition-all duration-300 ${
         isOpen ? 'opacity-1' : 'translate-y-1 opacity-0 pointer-events-none'
@@ -37,11 +44,13 @@ const ContactModal = ({ contacts }: Props) => {
           <li
             key={id}
             className="w-full"
-            onMouseOver={() => handleContactHover(contact.caption)}
-            onMouseOut={() => handleContactHover(defaultCaption)}
           >
             <Link
               href={contact.url}
+              onClick={(e) => e.stopPropagation()}
+              onTouchStart={(e) => e.stopPropagation()}
+              onMouseOver={() => handleContactHover(contact.caption)}
+              onMouseOut={() => handleContactHover(defaultCaption)}
               target="_blank"
               className="block flex justify-between items-center text-left p-2.5 rounded-md hover:bg-secondary-background hover:text-foreground"
             >

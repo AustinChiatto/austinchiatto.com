@@ -1,20 +1,27 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import Icon from '../Icon';
 import { useTheme } from '@/context/ThemeContext';
+import { useClickOutside } from '@/hooks/useClickOutside';
 
 const themes = ['light', 'terracotta', 'plum', 'grape', 'mint', 'ocean', 'dark'] as const;
 
 const ThemeSwitcher = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { theme, setTheme } = useTheme();
+  const modalRef = useRef(null);
+
+  useClickOutside(modalRef, () => {
+    if (isOpen) setIsOpen(false);
+  });
 
   const handleToggle = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const palette = (
+  const modal = (
     <div
+      ref={modalRef}
       onMouseLeave={handleToggle}
       className={`absolute left-[-1px] right-[-1px] bottom-[-1px] p-2.5 border border-border rounded-lg bg-background transition-all duration-300 ${
         isOpen ? 'opacity-1' : 'translate-y-1 opacity-0 pointer-events-none'
@@ -52,7 +59,7 @@ const ThemeSwitcher = () => {
       >
         <Icon name="palette" />
       </button>
-      {palette}
+      {modal}
     </div>
   );
 };
