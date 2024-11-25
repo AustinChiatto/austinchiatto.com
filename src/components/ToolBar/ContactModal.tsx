@@ -47,11 +47,10 @@ const ContactModal = ({ contacts }: Props) => {
           >
             <Link
               href={contact.url}
-              onClick={(e) => e.stopPropagation()}
-              onTouchStart={(e) => e.stopPropagation()}
               onMouseOver={() => handleContactHover(contact.caption)}
               onMouseOut={() => handleContactHover(defaultCaption)}
               target="_blank"
+              rel="noopener noreferrer"
               className="block flex justify-between items-center text-left p-2.5 rounded-md hover:bg-secondary-background hover:text-foreground"
             >
               {contact.label}
@@ -66,7 +65,7 @@ const ContactModal = ({ contacts }: Props) => {
   return (
     <>
       <button
-        onMouseDown={handleToggle}
+        onClick={handleToggle}
         className="relative flex-1 md:max-w-[20rem] h-16 px-[1.125rem] py-2.5 flex justify-between items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md"
       >
         {modal}
