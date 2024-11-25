@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: 'Austin Chiatto Portfolio',
     images: [
       {
-        url: 'https://austinchiatto.com/og-image.jpg',
+        url: 'images/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Austin Chiatto - Full Stack Developer'
@@ -42,17 +42,6 @@ export const metadata: Metadata = {
   },
   other: {
     'geo.region': 'CA'
-  },
-  appleWebApp: {
-    title: 'Austin Chiatto | Full Stack Developer',
-    statusBarStyle: 'default',
-    startupImage: ['https://austinchiatto.com/og-image.jpg']
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Austin Chiatto | Full Stack Developer',
-    description: 'I build full-stack tools to solve problems, daydream of finding the perfect notes app, and try every day to give more than I take.',
-    images: ['https://austinchiatto.com/og-image.jpg']
   }
 };
 
