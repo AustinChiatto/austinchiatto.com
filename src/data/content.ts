@@ -130,7 +130,7 @@ export const portfolioData: PortfolioData = {
         alt: 'Asteroid Run game title screen showing a spaceship against a starry background with the text "How long will you survive?"'
       },
       stack: ['HTML Canvas', 'JavaScript'],
-      url: 'https://asteroidrun.crumb.so/',
+      url: 'https://asteroid-run.vercel.app/',
       repo: 'https://github.com/AustinChiatto/asteroid-run-2.0.0'
     },
     {
