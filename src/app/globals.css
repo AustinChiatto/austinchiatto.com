@@ -2,26 +2,111 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --secondary-background: 0 0% 97%;
+    --secondary-foreground: 210 3% 41%;
+    --border: 210 8% 91%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-sm font-normal leading-normal m-0;
   }
 }
 
+[data-theme='light'] {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 0%;
+  --secondary-background: 0 0% 97%;
+  --secondary-foreground: 210 3% 41%;
+  --border: 210 8% 91%;
+}
+
+[data-theme='terracotta'] {
+  --background: 4 34% 33%;
+  --foreground: 20 63% 79%;
+  --secondary-background: 4 35% 36%;
+  --secondary-foreground: 15 47% 65%;
+  --border: 4 35% 41%;
+}
+
+[data-theme='plum'] {
+  --background: 279 17% 29%;
+  --foreground: 5 77% 83%;
+  --secondary-background: 279 18% 32%;
+  --secondary-foreground: 334 19% 58%;
+  --border: 279 18% 37%;
+}
+
+[data-theme='grape'] {
+  --background: 233 20% 23%;
+  --foreground: 260 49% 83%;
+  --secondary-background: 232 20% 26%;
+  --secondary-foreground: 250 14% 54%;
+  --border: 232 20% 31%;
+}
+
+[data-theme='mint'] {
+  --background: 170 32% 15%;
+  --foreground: 153 25% 59%;
+  --secondary-background: 170 32% 18%;
+  --secondary-foreground: 153 21% 43%;
+  --border: 170 33% 22%;
+}
+
+[data-theme='ocean'] {
+  --background: 210 20% 23%;
+  --foreground: 210 49% 83%;
+  --secondary-background: 210 20% 26%;
+  --secondary-foreground: 210 15% 53%;
+  --border: 210 21% 28%;
+}
+
+[data-theme='dark'] {
+  --background: 0 0% 13%;
+  --foreground: 220 9% 93%;
+  --secondary-background: 284 0% 16%;
+  --secondary-foreground: 213 6% 54%;
+  --border: 210 2% 18%;
+}
+
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: hsl(var(--secondary-foreground));
+  background: hsl(var(--background));
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+::selection {
+  background-color: hsl(var(--foreground));
+  color: hsl(var(--background));
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: hsl(var(--foreground));
+  color: hsl(var(--background));
 }
