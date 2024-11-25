@@ -25,7 +25,10 @@ const ThemeSwitcher = () => {
           <li
             key={t}
             onMouseDown={() => setTheme(t)}
-            onTouchStart={handleToggle}
+            onTouchStart={() => {
+              setTheme(t);
+              handleToggle();
+            }}
             className={`group w-full aspect-square grid place-items-center cursor-pointer p-2 bg-background rounded-md ${
               theme === t ? 'ring-1 ring-foreground' : 'border border-border'
             }`}
