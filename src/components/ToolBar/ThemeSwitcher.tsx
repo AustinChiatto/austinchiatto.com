@@ -15,13 +15,9 @@ const ThemeSwitcher = () => {
     if (isOpen) setIsOpen(false);
   });
 
-  const handleToggle = () => {
-    setIsOpen((prevState) => !prevState);
-  };
-
   const palette = (
     <div
-      onMouseLeave={handleToggle}
+      onMouseLeave={() => setIsOpen((prevState) => !prevState)}
       className={`absolute left-[-1px] right-[-1px] bottom-[-1px] p-2.5 border border-border rounded-lg bg-background transition-all duration-300 ${
         isOpen ? 'opacity-1' : 'translate-y-1 opacity-0 pointer-events-none'
       }`}
@@ -52,7 +48,7 @@ const ThemeSwitcher = () => {
   return (
     <div className="relative min-h-16 h-full">
       <button
-        onClick={handleToggle}
+        onClick={() => setIsOpen((prevState) => !prevState)}
         className="min-h-16 h-full aspect-square grid place-items-center border border-border rounded-lg transition-colors bg-background hover:bg-secondary-background hover:text-foreground"
       >
         <Icon name="palette" />
