@@ -3,6 +3,7 @@ import { Inter as FontSans } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import JsonLd from '@/components/JsonLd';
+import DynamicFavicon from '@/components/DynamicFavicon';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     follow: true
   },
   icons: {
-    icon: '/favicon.ico'
+    icon: '/favicon-light.ico'
   },
   alternates: {
     canonical: 'https://austinchiatto.com'
@@ -54,6 +55,7 @@ export default function RootLayout({
       <html lang="en">
         <head>
           <JsonLd />
+          <DynamicFavicon />
         </head>
         <body className={`${fontSans.variable} antialiased`}>{children}</body>
       </html>
