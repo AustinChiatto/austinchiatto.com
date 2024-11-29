@@ -1,6 +1,5 @@
 'use client';
 import React, { createContext, useState, useContext, ReactNode, useEffect } from 'react';
-
 type Theme = 'light' | 'terracotta' | 'plum' | 'grape' | 'mint' | 'ocean' | 'dark';
 
 interface ThemeContextType {
@@ -14,23 +13,37 @@ export const ThemeProvider: React.FC<{ children: ReactNode }> = ({ children }) =
   const [theme, setTheme] = useState<Theme>('light');
 
   useEffect(() => {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setTheme(prefersDark ? 'dark' : 'light');
+    const preferredTheme = localStorage.getItem('theme') as Theme;
+    if (preferredTheme) {
+      setTheme(preferredTheme);
+    } else {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      setTheme(prefersDark ? 'dark' : 'light');
+    }
+  }, []);
 
+  useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     const handleChange = (e: MediaQueryListEvent) => {
-      setTheme(e.matches ? 'dark' : 'light');
+      if (!localStorage.getItem('theme')) {
+        setTheme(e.matches ? 'dark' : 'light');
+      }
     };
 
     mediaQuery.addEventListener('change', handleChange);
     return () => mediaQuery.removeEventListener('change', handleChange);
   }, []);
 
+  const handleThemeChange = (newTheme: Theme) => {
+    setTheme(newTheme);
+    localStorage.setItem('theme', newTheme);
+  };
+
   useEffect(() => {
     document.documentElement.setAttribute('data-theme', theme);
   }, [theme]);
 
-  return <ThemeContext.Provider value={{ theme, setTheme }}>{children}</ThemeContext.Provider>;
+  return <ThemeContext.Provider value={{ theme, setTheme: handleThemeChange }}>{children}</ThemeContext.Provider>;
 };
 
 export const useTheme = () => {
