@@ -39,7 +39,8 @@ const config: Config = {
         xs: '0.25rem',
         sm: '0.5rem',
         md: '0.75rem',
-        lg: '1.125rem'
+        lg: '1.125rem',
+        xl: '5rem'
       },
       fontFamily: {
         secondary: 'var(--font-mono)'

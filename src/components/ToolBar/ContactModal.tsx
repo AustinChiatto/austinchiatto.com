@@ -66,7 +66,7 @@ const ContactModal = ({ contacts }: Props) => {
     <>
       <button
         onClick={handleToggle}
-        className="relative flex-1 md:max-w-[20rem] h-16 px-[1.125rem] py-2.5 flex justify-between items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md"
+        className="relative flex-1 md:max-w-[20rem] h-16 px-[1.125rem] py-2.5 flex justify-between items-center border border-border rounded-lg transition-colors bg-background hover:bg-secondary-background"
       >
         {modal}
         <h3 className="text-foreground">Get in touch</h3>

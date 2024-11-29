@@ -34,8 +34,8 @@ const ThemeSwitcher = () => {
           <li
             key={t}
             onClick={() => setTheme(t)}
-            className={`group w-full aspect-square grid place-items-center cursor-pointer p-2 bg-background rounded-md ${
-              theme === t ? 'ring-1 ring-foreground' : 'border border-border'
+            className={`w-full aspect-square group grid place-items-center cursor-pointer p-2 bg-background rounded-md transition-all hover:scale-[1.05] ${
+              theme === t ? 'ring-1 ring-foreground rounded-xl' : 'border border-border'
             }`}
             data-theme={t}
           >
@@ -53,7 +53,7 @@ const ThemeSwitcher = () => {
     <div className="relative min-h-16 h-full">
       <button
         onClick={handleToggle}
-        className="min-h-16 h-full aspect-square grid place-items-center border border-border rounded-lg bg-background transition-shadow hover:shadow-md hover:text-foreground"
+        className="min-h-16 h-full aspect-square grid place-items-center border border-border rounded-lg transition-colors bg-background hover:bg-secondary-background hover:text-foreground"
       >
         <Icon name="palette" />
       </button>
