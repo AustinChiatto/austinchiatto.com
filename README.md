@@ -16,8 +16,6 @@ Currently, I work as a front-end developer building websites at [Forge and Smith
 
 [Scallion for OnionOS](https://github.com/OnionUI/Themes/pull/42) - Retro emulator OS themes
 
----
-
 ## Portfolio Changelog
 
 ### Version 1.0.2
