@@ -22,6 +22,17 @@ export interface Projects {
   repo: string;
 }
 
+export interface Employers {
+  id: number;
+  name: string;
+  siteUrl: string;
+  siteImage: {
+    src: string;
+    alt: string;
+    base64: string;
+  };
+}
+
 export interface PortfolioData {
   intro: {
     heading: string;
@@ -39,16 +50,32 @@ export interface PortfolioData {
   projects: Projects[];
 }
 
+export const employerData: Employers[] = [
+  {
+    id: 0,
+    name: 'Forge and Smith',
+    siteUrl: 'https://forgeandsmith.com',
+    siteImage: { src: '/images/og-image__forgeandsmith.jpg', alt: 'The homepage of the Forge and Smith website', base64: '' }
+  },
+  {
+    id: 1,
+    name: 'Dovetail Digital',
+    siteUrl: 'https://www.dovetaildigital.ca',
+    siteImage: { src: '/images/og-image__dovetail.jpg', alt: 'The homepage of the Dovetail Digital website', base64: '' }
+  }
+];
+
 export const portfolioData: PortfolioData = {
   intro: {
     heading: 'Austin Chiatto',
     subheading: 'Sofware Developer',
     bio: 'I build full-stack tools to solve problems, daydream of finding the perfect notes app, and try every day to give more than I take.',
+
     employment: [
       { text: 'Currently, I work as a front-end developer building websites at ' },
-      { text: 'Forge and Smith', link: { url: 'https://forgeandsmith.com', label: 'Forge and Smith' } },
+      { text: employerData[0].name, link: { url: employerData[0].siteUrl, label: employerData[0].name } },
       { text: '. Previously at ' },
-      { text: 'Dovetail Digital', link: { url: 'https://www.dovetaildigital.ca', label: 'Dovetail Digital' } },
+      { text: employerData[1].name, link: { url: employerData[1].siteUrl, label: employerData[1].name } },
       { text: '.' }
     ]
   },
@@ -87,7 +114,7 @@ export const portfolioData: PortfolioData = {
         alt: 'SpaceX Starlink mission launch countdown interface showing rocket fairing with progress bar and mission details'
       },
       stack: ['Next.js', 'TypeScript', 'API'],
-      url: 'https://apogee-spaceflight-tracker.vercel.app',
+      url: 'https://apogee-space.vercel.app/',
       repo: 'https://github.com/AustinChiatto/apogee'
     },
     {
