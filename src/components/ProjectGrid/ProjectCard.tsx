@@ -1,9 +1,9 @@
-'use client';
-import { useState } from 'react';
-import { robotoMono } from '@/data/fonts';
-import Badge from '../Badge';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+import { useState } from "react";
+import { robotoMono } from "@/data/fonts";
+import Badge from "../Badge";
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   desc: string | null;
@@ -29,8 +29,8 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
   const projectMedia = (
     <Link
       href={url}
-      className={`block relative rounded-xs md:rounded-sm overflow-hidden transition-all ease-fling duration-[200ms] hover:translate-y-1 max-w-[70%] max-h-[50%] ${
-        desc ? 'md:max-w-[60%] md:max-h-[70%] lg:max-w-[60%] lg:max-h-[70%] xl:max-w-[100%] xl:max-h-[80%]' : ''
+      className={`block relative rounded-xs md:rounded-sm overflow-hidden transition-all ease-fling duration-[200ms] hover:-translate-y-1 max-w-[70%] max-h-[50%] ${
+        desc ? "md:max-w-[60%] md:max-h-[70%] lg:max-w-[60%] lg:max-h-[70%] xl:max-w-[100%] xl:max-h-[80%]" : ""
       } `}
     >
       <Image
@@ -39,11 +39,11 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
         width={500}
         height={300}
         style={{
-          maxWidth: '100%',
-          maxHeight: '100%',
-          width: 'auto',
-          height: 'auto',
-          objectFit: 'contain'
+          maxWidth: "100%",
+          maxHeight: "100%",
+          width: "auto",
+          height: "auto",
+          objectFit: "contain",
         }}
       />
     </Link>
@@ -53,7 +53,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
     <Link
       href={repo}
       className={`block min-w-fit h-fit absolute right-0 top-0 flex flex-nowrap z-1 whitespace-nowrap pl-2 gap-2 items-center justify-end bg-background rounded-sm transition-all duration-300 ${
-        isOpen ? 'opacity-1' : 'translate-x-1 opacity-0 blur-xs pointer-events-none'
+        isOpen ? "opacity-1" : "translate-x-1 opacity-0 blur-xs pointer-events-none"
       }`}
     >
       <p
@@ -76,7 +76,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
       className="relative block w-fit"
     >
       {repoStatus}
-      <ul className={`h-fit flex gap-2 justify-end transition-all duration-300 ${isOpen ? 'opacity-0 blur-xs pointer-events-none' : ''}`}>
+      <ul className={`h-fit flex gap-2 justify-end transition-all duration-300 ${isOpen ? "opacity-0 blur-xs pointer-events-none" : ""}`}>
         {stack.map((tech, i) => (
           <li key={i}>
             <Badge label={tech} />
@@ -89,7 +89,7 @@ export const ProjectCard = ({ desc, url, stack, name, repo, commit, image }: Pro
   return (
     <li
       className={`relative overflow-hidden rounded-lg p-4 lg:p-6 lg:pt-4 flex flex-col justify-between ${
-        desc ? 'col-span-12 aspect-square md:aspect-[1.5/1]' : 'col-span-12 md:col-span-6 aspect-square'
+        desc ? "col-span-12 aspect-square md:aspect-[1.5/1]" : "col-span-12 md:col-span-6 aspect-square"
       } bg-secondary-background`}
     >
       <div className="z-10">

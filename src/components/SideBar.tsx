@@ -1,21 +1,26 @@
-import { PortfolioData } from '@/data/content';
-import ToolBar from './ToolBar/ToolBar';
-import Link from 'next/link';
+"use client";
+import { PortfolioData } from "@/data/content";
+import ToolBar from "./ToolBar/ToolBar";
+import Link from "next/link";
 
 type Props = {
   content: PortfolioData;
 };
 
-const EmploymentLink = ({ url, label }: { url: string; label: string }) => (
-  <Link
-    href={url}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="text-foreground decoration-secondary-foreground underline-offset-2 hover:underline"
-  >
-    {label}
-  </Link>
-);
+const EmploymentLink = ({ url, label }: { url: string; label: string }) => {
+  return (
+    <>
+      <Link
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-foreground decoration-secondary-foreground underline-offset-2 hover:underline"
+      >
+        {label}
+      </Link>
+    </>
+  );
+};
 
 const SideBar = ({ content }: Props) => {
   const intro = content.intro;
@@ -42,6 +47,7 @@ const SideBar = ({ content }: Props) => {
           )}
         </p>
       </div>
+
       <ToolBar contacts={content.contacts} />
     </aside>
   );
